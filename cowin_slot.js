@@ -11,11 +11,11 @@ var interval = setInterval(function(){
 		resp.on('end', () => {
 			try{
 				data = JSON.parse(data);
-				//console.log(data.centers[0].sessions[1].available_capacity = 10);
+				//console.log(data.centers[91].sessions[0].available_capacity = 10);
 				var found = false;
 				data.centers.forEach((c) => {
 					c.sessions.forEach((s) => {
-						if(s.available_capacity > 0 && s.vaccine == "COVAXIN"){
+						if(s.available_capacity_dose1 > 0 && s.min_age_limit < 45){
 							found = true;
 							console.log(c);
 							beep(3, 1000);
