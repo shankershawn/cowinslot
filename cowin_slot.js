@@ -15,15 +15,17 @@ var interval = setInterval(function(){
 				var found = false;
 				data.centers.forEach((c) => {
 					c.sessions.forEach((s) => {
-						if(s.available_capacity_dose1 > 0 && s.min_age_limit < 45){
+						if(s.available_capacity_dose2  > 0 && s.min_age_limit < 45){
 							found = true;
-							console.log(c);
-							beep(3, 1000);
+							console.log(c.name + " -- " + s.vaccine + " -- " + s.date + " -- " + s.available_capacity_dose1 + " -- " + s.slots.join(","));
+							beep(1);
 						}
 					});
 				});
 				if(!found){
 					console.log("No slots found");
+				}else{
+					console.log("*******************************************************************************************");
 				}
 			}catch(err){
 				console.log(err);

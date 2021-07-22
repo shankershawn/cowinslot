@@ -1,0 +1,1 @@
+node cowin_slot.js
